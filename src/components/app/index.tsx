@@ -1,6 +1,9 @@
 import * as React from "react";
+import { IMapStateToAppProps } from "./container";
 
-export class App extends React.Component {
+type TAppProps = IMapStateToAppProps;
+
+export class App extends React.Component<TAppProps> {
   public render() {
     return (
       <div/>

@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { App } from "./components/app";
+import { AppContainer } from "./components/app/container";
 import { store } from "./store";
 
 const root = (
   <Provider store={store}>
-    <App/>
+    <AppContainer />
   </Provider>
 );
 
