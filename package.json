@@ -1,0 +1,21 @@
+{
+  "name": "delta-way-test",
+  "version": "1.0.0",
+  "description": "Test task for Delta Way",
+  "homepage": "https://github.com/ollcaier/delta-way-test",
+  "author": {
+    "name": "Saveli Tomak",
+    "email": "ollcaier@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ollcaier/delta-way-test.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "npm": ">=6.4.1",
+    "node": ">=8.12.0"
+  }
+}
