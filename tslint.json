@@ -6,6 +6,13 @@
   ],
   "rules": {
     "typedef": false,
-    "prefer-function-over-method": false
+    "prefer-function-over-method": false,
+    "completed-docs": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules",
+      "*.js"
+    ]
   }
 }
