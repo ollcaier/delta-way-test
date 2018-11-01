@@ -4,5 +4,8 @@
     "tslint:all",
     "tslint-react"
   ],
-  "rules": {}
+  "rules": {
+    "typedef": false,
+    "prefer-function-over-method": false
+  }
 }
