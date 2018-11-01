@@ -1,0 +1,8 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:all",
+    "tslint-react"
+  ],
+  "rules": {}
+}
