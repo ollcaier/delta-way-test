@@ -1,0 +1,85 @@
+@import "../../assets/clearfix";
+@import "../../assets/resolutions";
+
+.app-container {
+  padding: 30px 10px 0 10px;
+  min-width: $minContainerWidth;
+  max-width: $maxContainerWidth;
+
+  .content-container {
+    display: flex;
+    margin-top: 40px;
+  }
+}
+
+// One column view
+@media (max-width: $maxTabletWidth) {
+  .app-container {
+    width: 100%;
+
+    .content-container {
+      flex-direction: column;
+
+      .artist-container {
+        max-width: 405px;
+      }
+
+      .events-container {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+// Two column view
+@media (min-width: $minDesktopWidth) {
+  .app-container {
+    margin: 0 auto;
+    width: 90%;
+
+    .content-container {
+      .events-container {
+        margin-left: 60px;
+      }
+    }
+  }
+}
+
+@media (min-width: $averageTabletWidth) {
+  .app-container {
+    .content-container {
+      .artist-container {
+        width: 405px;
+      }
+
+      .events-container {
+        width: 600px;
+      }
+    }
+  }
+}
+
+@media (max-width: $averageTabletWidth) and (min-width: $minTabletWidth) {
+  .app-container {
+    .content-container {
+      .artist-container,
+      .events-container {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 405px;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: $maxPhoneWidth) {
+  .app-container {
+    .content-container {
+      .artist-container,
+      .events-container {
+        width: 100%;
+      }
+    }
+  }
+}

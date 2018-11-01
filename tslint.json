@@ -8,7 +8,8 @@
     "typedef": false,
     "prefer-function-over-method": false,
     "completed-docs": false,
-    "no-unsafe-any": false
+    "no-unsafe-any": false,
+    "no-string-literal": false
   },
   "linterOptions": {
     "exclude": [
