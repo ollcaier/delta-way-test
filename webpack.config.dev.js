@@ -29,6 +29,12 @@ const webpackConfigDev = {
     hot: true,
     https: true,
     noInfo: false,
+    proxy: {
+      "/artists/*": {
+        target: "https://rest.bandsintown.com",
+        changeOrigin: true,
+      },
+    },
   },
 };
 
