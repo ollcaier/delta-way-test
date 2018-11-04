@@ -1,0 +1,58 @@
+@import "../../assets/resolutions";
+@import "../../assets/colors";
+@import "../../assets/scales";
+@import "../../assets/mixins";
+
+.search {
+  display: flex;
+
+  &__input {
+    border: 1px solid $borderColor;
+    line-height: 40px;
+    padding: 0 10px;
+    transition: border-color .3s;
+    @include borderRadius();
+
+    &:focus {
+      border-color: $borderHoverColor;
+    }
+
+    &_invalid {
+      border-color: $red !important;
+    }
+  }
+
+  &__button {
+    background-color: $blue;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    font-weight: $semiBoldFont;
+    height: 42px;
+    text-transform: uppercase;
+    @include borderRadius();
+  }
+}
+
+@media (max-width: $maxPhoneWidth) {
+  .search {
+    flex-direction: column;
+
+    &__button {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (min-width: $minTabletWidth) {
+  .search {
+    &__input {
+      width: 245px;
+    }
+
+    &__button {
+      margin-left: 20px;
+      width: 160px;
+    }
+  }
+}

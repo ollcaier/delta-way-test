@@ -25,9 +25,9 @@ export const fetchingReducer = (state = initialFetchingState, action: TFetchingA
       };
     case SET_FETCHING_TO_SUCCESS:
       return {
+        ...state,
         hasServerError: false,
         isFetching: false,
-        ...state,
       };
     case SET_FETCHING_TO_FAILED:
       return {

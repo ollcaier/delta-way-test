@@ -1,14 +1,20 @@
-import { Dispatch } from "redux";
+import { Action } from "redux";
+import { ThunkDispatch } from "redux-thunk";
 import { fetchArtist } from "../../requests/fetchArtist";
 import { fetchEvents } from "../../requests/fetchEvents";
 import { setFetchingToFailed } from "../actions/setFetchingToFailed";
 import { setFetchingToStarted } from "../actions/setFetchingToStarted";
-import { setFetchingToSuccess } from "../actions/setFetchingToSuccess";
+import { ISetFetchingToSuccess, setFetchingToSuccess } from "../actions/setFetchingToSuccess";
+import { IAppState } from "../index";
 
-export type TFetchArtistData = (artistName: string) => (dispatch: Dispatch) => Promise<void>;
+export type TFetchArtistAction = Action | ISetFetchingToSuccess;
+
+type TFetchArtistDataResult = (dispatch: ThunkDispatch<IAppState, void, TFetchArtistAction>) => void;
+
+export type TFetchArtistData = (artistName: string) => TFetchArtistDataResult;
 
 export const fetchArtistData: TFetchArtistData = (artistName: string) =>
-  async (dispatch) => {
+  async (dispatch: ThunkDispatch<IAppState, void, TFetchArtistAction>): Promise<void> => {
     dispatch(setFetchingToStarted());
 
     try {

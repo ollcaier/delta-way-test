@@ -2,9 +2,9 @@
 @import "../../assets/resolutions";
 
 .app-container {
-  padding: 30px 10px 0 10px;
-  min-width: $minContainerWidth;
   max-width: $maxContainerWidth;
+  min-width: $minContainerWidth;
+  padding: 30px 10px 0 10px;
 
   .content-container {
     display: flex;

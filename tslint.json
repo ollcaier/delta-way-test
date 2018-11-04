@@ -9,7 +9,8 @@
     "prefer-function-over-method": false,
     "completed-docs": false,
     "no-unsafe-any": false,
-    "no-string-literal": false
+    "no-string-literal": false,
+    "member-ordering": false
   },
   "linterOptions": {
     "exclude": [
