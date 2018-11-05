@@ -1,0 +1,72 @@
+@import "../../assets/colors";
+@import "../../assets/mixins";
+@import "../../assets/resolutions";
+
+.artist {
+  &__image-container {
+    margin-top: 24px;
+  }
+
+  &__facebook-link-container {
+    margin-top: 12px;
+  }
+
+  &__name {
+    line-height: 40px;
+  }
+
+  &__facebook-link {
+    color: $blue;
+    line-height: 20px;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: $maxPhoneWidth) {
+  .artist {
+    &__name,
+    &__image,
+    &__facebook-link,
+    &__name-preview,
+    &__image-preview,
+    &__facebook-link-preview {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__name,
+    &__facebook-link {
+      width: 300px;
+    }
+
+    &__name-preview {
+      @include contentPreview(300px, 40px);
+    }
+
+    &__image,
+    &__image-preview {
+      @include contentPreview(300px, 300px);
+    }
+
+    &__facebook-link-preview {
+      @include contentPreview(300px, 30px);
+    }
+  }
+}
+
+@media (min-width: $minTabletWidth) {
+  .artist {
+    &__name-preview {
+      @include contentPreview(405px, 40px);
+    }
+
+    &__image,
+    &__image-preview {
+      @include contentPreview(405px, 405px);
+    }
+
+    &__facebook-link-preview {
+      @include contentPreview(405px, 30px);
+    }
+  }
+}

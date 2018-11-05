@@ -30,7 +30,12 @@
     font-weight: $semiBoldFont;
     height: 42px;
     text-transform: uppercase;
+    transition: background-color .3s;
     @include borderRadius();
+
+    &:hover {
+      background-color: $darkBlue;
+    }
   }
 }
 

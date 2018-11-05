@@ -10,7 +10,10 @@
     "completed-docs": false,
     "no-unsafe-any": false,
     "no-string-literal": false,
-    "member-ordering": false
+    "member-ordering": false,
+    "strict-boolean-expressions": false,
+    "jsx-curly-spacing": false,
+    "jsx-no-multiline-js": false
   },
   "linterOptions": {
     "exclude": [
