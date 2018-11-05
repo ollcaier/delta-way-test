@@ -1,0 +1,33 @@
+@import "../../assets/colors";
+@import "../../assets/mixins";
+
+.event {
+  box-shadow: 3px 3px 10px $borderColor;
+  color: #000;
+  display: block;
+  margin-bottom: 16px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: box-shadow .3s;
+  width: 100%;
+  @include borderRadius();
+
+  &:hover {
+    box-shadow: 3px 3px 10px $borderHoverColor;
+  }
+
+  &__location {
+    line-height: 40px;
+  }
+
+  &__date {
+    color: $gray;
+    font-size: 14px;
+  }
+}
+
+.event-preview {
+  margin-bottom: 16px;
+  @include borderRadius();
+  @include contentPreview(100%, 98px);
+}

@@ -1,0 +1,11 @@
+@import "../../assets/mixins";
+
+.events {
+  &__container {
+    margin-top: 24px;
+  }
+
+  &__header-preview {
+    @include contentPreview(400px, 40px);
+  }
+}
