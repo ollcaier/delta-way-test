@@ -4,19 +4,19 @@ import { IEvent } from "../../models/iEvent";
 import { Event } from "../event";
 import styles from "./styles.scss";
 
-export interface IEventsProps {
+export interface IEventListProps {
   artist: IArtist | undefined;
   events: IEvent[];
 }
 
-export class Events extends React.Component<IEventsProps> {
+export class EventList extends React.Component<IEventListProps> {
   public render() {
     return (
-      <div className={styles["events"]}>
+      <div className={styles["event-list"]}>
         {
           this.shouldRenderPreview()
-            ? <div className={styles["events__header-preview"]}/>
-            : <h2 className={styles["events__header"]}>{ this.getHeader() }</h2>
+            ? <div className={styles["event-list__header-preview"]}/>
+            : <h2 className={styles["event-list__header"]}>{ this.getHeader() }</h2>
         }
         {
           this.renderEvents()
@@ -30,7 +30,7 @@ export class Events extends React.Component<IEventsProps> {
 
     if (this.shouldRenderPreview()) {
       return (
-        <div className={styles["events__container"]}>
+        <div className={styles["event-list__container"]}>
           {
             // tslint:disable-next-line:no-magic-numbers
             [1, 2].map((index: number) =>
@@ -44,7 +44,7 @@ export class Events extends React.Component<IEventsProps> {
     }
 
     return (
-      <div className={styles["events__container"]}>
+      <div className={styles["event-list__container"]}>
         {
           events.map((event: IEvent) =>
             <Event

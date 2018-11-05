@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Artist } from "../artist";
-import { Events } from "../events";
+import { EventList } from "../event-list";
 import { SearchContainer } from "../search/container";
 import { IMapStateToAppProps } from "./container";
 import styles from "./styles.scss";
@@ -24,7 +24,7 @@ export class App extends React.Component<TAppProps> {
             <Artist artist={artist} />
           </section>
           <section className={styles["events-container"]}>
-            <Events artist={artist} events={events}/>
+            <EventList artist={artist} events={events}/>
           </section>
         </main>
       </div>
