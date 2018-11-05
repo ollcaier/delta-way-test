@@ -1,19 +1,21 @@
 import { SET_FETCHING_TO_CLEAR } from "../actions/setFetchingToClear";
-import { SET_FETCHING_TO_FAILED } from "../actions/setFetchingToFailed";
+import { ISetFetchingToFailed, SET_FETCHING_TO_FAILED } from "../actions/setFetchingToFailed";
 import { SET_FETCHING_TO_STARTED } from "../actions/setFetchingToStarted";
 import { ISetFetchingToSuccess, SET_FETCHING_TO_SUCCESS } from "../actions/setFetchingToSuccess";
 
 export interface IFetchingState {
+  errorMessage: string;
   hasServerError: boolean;
   isFetching: boolean;
 }
 
 const initialFetchingState: IFetchingState = {
+  errorMessage: "",
   hasServerError: false,
   isFetching: false,
 };
 
-type TFetchingAction = ISetFetchingToSuccess;
+type TFetchingAction = ISetFetchingToSuccess & ISetFetchingToFailed;
 
 export const fetchingReducer = (state = initialFetchingState, action: TFetchingAction) => {
   switch (action.type) {
@@ -32,6 +34,7 @@ export const fetchingReducer = (state = initialFetchingState, action: TFetchingA
     case SET_FETCHING_TO_FAILED:
       return {
         ...state,
+        errorMessage: action.errorMessage,
         hasServerError: true,
         isFetching: false,
       };

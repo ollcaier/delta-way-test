@@ -4,6 +4,7 @@ declare const styles: {
   "content-container": string;
   "events-container": string;
   "search-container": string;
+  "error-container": string;
 };
 
 export = styles;

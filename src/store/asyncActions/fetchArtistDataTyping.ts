@@ -28,6 +28,12 @@ export const fetchArtistData: TFetchArtistData = (artistName: string) =>
 
       dispatch(setFetchingToSuccess(artist, events));
     } catch (e) {
-      dispatch(setFetchingToFailed());
+      // When API return 'Nothing found' error JS can't parse JSON
+      if (e instanceof SyntaxError) {
+        dispatch(setFetchingToFailed("Nothing found"));
+      // Otherwise error
+      } else {
+        dispatch(setFetchingToFailed("Server error"));
+      }
     }
   };

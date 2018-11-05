@@ -1,11 +1,24 @@
 @import "../../assets/mixins";
+@import "../../assets/resolutions";
 
 .event-list {
   &__container {
     margin-top: 24px;
   }
+}
 
-  &__header-preview {
-    @include contentPreview(400px, 40px);
+@media (max-width: $maxPhoneWidth) {
+  .event-list {
+    &__header-preview {
+      @include contentPreview(100%, 40px);
+    }
+  }
+}
+
+@media (min-width: $minTabletWidth) {
+  .event-list {
+    &__header-preview {
+      @include contentPreview(400px, 40px);
+    }
   }
 }

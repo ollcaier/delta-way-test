@@ -1,4 +1,4 @@
 import { IAppState } from "../index";
 
-export const selectServerError = (state: IAppState): boolean =>
+export const selectServerErrorStatus = (state: IAppState): boolean =>
   state.fetchingState.hasServerError;

@@ -1,0 +1,23 @@
+@import "../../assets/colors";
+@import "../../assets/mixins";
+@import "../../assets/scales";
+
+.error {
+  background: $red;
+  margin: 20px auto;
+  padding: 10px 20px;
+  width: 300px;
+  @include borderRadius();
+
+  &__header {
+    color: $white;
+    font-size: 11px;
+    font-weight: $semiBoldFont;
+    text-transform: uppercase;
+  }
+
+  &__message {
+    color: $white;
+    font-size: 16px;
+  }
+}
